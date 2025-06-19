@@ -15,13 +15,21 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://leetlab-5x93eqrmd-bhanu-pundirs-projects.vercel.app",
-    ],
+    origin: function (origin, callback) {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "https://leetlab-5x93eqrmd-bhanu-pundirs-projects.vercel.app",
+      ];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed for this origin"));
+      }
+    },
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
 

@@ -15,7 +15,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://leetlab-5x93eqrmd-bhanu-pundirs-projects.vercel.app",
+    ],
     credentials: true,
   })
 );

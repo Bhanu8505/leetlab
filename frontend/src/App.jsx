@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-import HomePage from "./Page/HomePage.jsx";
+import HomePage from "./page/HomePage.jsx";
 import LoginPage from "./page/LoginPage.jsx";
 import SignUpPage from "./page/SignupPage.jsx";
 import ProfilePage from "./page/ProfilePage.jsx";
